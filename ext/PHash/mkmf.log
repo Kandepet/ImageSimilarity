@@ -1,0 +1,36 @@
+have_header: checking for ruby.h... -------------------- yes
+
+"gcc -o conftest -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1/x86_64-linux -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1/ruby/backward -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1 -I.././PHash -I/home/deepak/.rvm/usr/include    -D_GNU_SOURCE -Wall conftest.c  -L. -L/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -Wl,-R/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -L/home/deepak/.rvm/usr/lib -Wl,-R/home/deepak/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -L/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -E -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1/x86_64-linux -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1/ruby/backward -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1 -I.././PHash -I/home/deepak/.rvm/usr/include    -D_GNU_SOURCE -Wall  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lstdc++... -------------------- yes
+
+"gcc -o conftest -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1/x86_64-linux -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1/ruby/backward -I/home/deepak/.rvm/rubies/ruby-1.9.2-p320/include/ruby-1.9.1 -I.././PHash -I/home/deepak/.rvm/usr/include    -D_GNU_SOURCE -Wall conftest.c  -L. -L/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -Wl,-R/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -L/home/deepak/.rvm/usr/lib -Wl,-R/home/deepak/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -L/home/deepak/.rvm/rubies/ruby-1.9.2-p320/lib -lruby-static -lstdc++  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: In function ‘t’:
+conftest.c:5:28: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
